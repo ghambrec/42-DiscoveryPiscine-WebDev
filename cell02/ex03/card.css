@@ -1,0 +1,81 @@
+table, tr, td {
+	border-collapse: collapse;
+	padding: 0;
+}
+
+table
+{
+	width: 300px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.header
+{
+	text-align: center;
+	font-family: sans-serif;
+	font-size: xx-large;
+	font-weight: 600;
+	margin: 0;
+	padding: 10px;
+}
+
+.profilpic
+{
+	width: 300px;
+	height: auto;
+	display: block;
+}
+
+.contact-div
+{
+	background-color: black;
+	text-align: center;
+	margin: 0;
+	padding: 10px;
+}
+
+.contact-text
+{
+	font-family: sans-serif;
+	font-weight: 600;
+	color: white;
+	text-decoration: none;
+}
+
+.social-icon
+{
+	height: 25px;
+}
+
+.social-div
+{
+	text-align: center;
+	padding: 5px;
+}
+
+.info-intra
+{
+	font-family: sans-serif;
+	text-align: center;
+	font-size: 25px;
+	font-weight: 600;
+	padding: 5px;
+	margin: 0px;
+}
+
+.info-text
+{
+	font-family: sans-serif;
+	text-align: center;
+	color: grey;
+	padding: 5px;
+	margin: 0px;
+}
+
+.info-school
+{
+	font-family: sans-serif;
+	text-align: center;
+	padding: 5px;
+	margin: 0px;
+}
