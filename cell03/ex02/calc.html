@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<form id="form" action="/action_page.php">
+		<label for="num1">First number:</label>
+		<input type="text" id="num1" name="num1" pattern="^[0-9]+$"><br><br>
+		<select name="operators" id="op">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		  </select>
+		<br><br>
+		<label for="num2">Second number:</label>
+		<input type="text" id="num2" name="num2" pattern="^[0-9]+$"><br><br>
+		<input type="submit" value="Try me!">
+	  </form>
+
+	<script>
+		const form = document.getElementById("form");
+
+		// set default numbers to zero
+		document.getElementById("num1").value = 0;
+		document.getElementById("num2").value = 0;
+
+		setInterval(() => {
+    		alert('Please, use me...');
+		}, 30000);
+
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+
+			// get values
+			const num1_text = document.getElementById("num1").value;
+			const op = document.getElementById("op").value;
+			const num2_text = document.getElementById("num2").value;
+
+			// check if only numbers
+			const regex = /^[0-9]+$/
+			if (!regex.test(num1_text) || !regex.test(num2_text))
+			{
+				alert("Error :(");
+			}
+
+			// convert numbers to integers
+			const num1 = Number(num1_text);
+			const num2 = Number(num2_text);
+
+			let result;
+			let error = 0;
+			if (op == '+')
+			{
+				result = num1 + num2;
+			}
+			else if (op == '-')
+			{
+				result = num1 - num2;
+			}
+			else if (op == '*')
+			{
+				result = num1 * num2;
+			}
+			else if (op == '/')
+			{
+				if (num2 == 0)
+				{
+					error = 1;
+					alert("It's over 9000!")
+				}
+				else
+				{
+					result = num1 / num2;
+				}
+			}
+			else if (op == '%')
+			{
+				if (num2 == 0)
+				{
+					error = 1;
+					alert("It's over 9000!")
+				}
+				else
+				{
+					result = num1 % num2;
+				}
+			}
+			else
+			{
+				error = 1;
+				alert("Invalid operator!");
+			}
+
+		if (error == 0)
+		{
+			console.log("Result: " + result);
+			alert("Result: " + result);
+		}
+		})
+	</script>
+
+</body>
+</html>
