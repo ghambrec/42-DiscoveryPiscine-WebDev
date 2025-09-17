@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Changing Color with jQuery</title>
+	<link rel="stylesheet" href="backgroound.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+	<button id="btn" type="button">Click Me!</button>
+
+	<script>
+		$(document).ready(function() {
+			$('#btn').click(function() {
+				const randomColor = '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+				console.log(randomColor);
+				$("body").css('background-color' ,randomColor);
+			});
+		});
+	</script>
+
+</body>
+</html>
